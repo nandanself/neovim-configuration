@@ -15,7 +15,7 @@ require("nvim-tree").setup({
     custom = { '^.git$', '^node_modules$' }
   },
   git = {
-    enable = false
+    enable = true
   },
   log = {
     enable = true,

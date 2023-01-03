@@ -2,27 +2,26 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
+--  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', bufopts)
-  vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>d', '<cmd>Telescope lsp_document_symbols<cr>', bufopts)
+  -- In this case, we create a function that lets us more easily define mappings specific
+  -- for LSP related items. It sets the mode, buffer and description for us each time.
 
-  -- format on save
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format()
-    end
-  })
+  -- local nmap = function(keys, func, desc)
+  --   if desc then
+  --     desc = 'LSP: ' .. desc
+  --   end
+  --
+  --   vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+
+  -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  --
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
 end
-
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -65,6 +64,5 @@ require('mason-lspconfig').setup_handlers({
   end
 })
 
-vim.keymap.set('n', '<leader>o', '<cmd>TypescriptOrganizeImports<cr>')
 vim.keymap.set('n', '<leader>a', '<cmd>TypescriptAddMissingImports<cr>')
 vim.keymap.set('n', '<leader>r', '<cmd>TypescriptRemoveUnused<cr>')

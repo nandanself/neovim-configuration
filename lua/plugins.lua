@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
   use 'MattesGroeger/vim-bookmarks'
   use 'tom-anders/telescope-vim-bookmarks.nvim'
 
@@ -36,7 +37,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
   use 'onsails/lspkind-nvim'
 
   use 'L3MON4D3/LuaSnip'
@@ -65,5 +65,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-obsession'
   use 'dhruvasagar/vim-prosession'
   use('f-person/git-blame.nvim')
+  use { 'folke/which-key.nvim', config = "require('which_key_config')", event = "BufWinEnter" }
+  use 'lukas-reineke/indent-blankline.nvim'
+  use "folke/neodev.nvim"
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+  }
+  use { "folke/twilight.nvim", config = "require('twilight_config')" }
   use('github/copilot.vim')
 end)
