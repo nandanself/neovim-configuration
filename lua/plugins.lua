@@ -75,5 +75,6 @@ return require('packer').startup(function(use)
   }
   use { "folke/twilight.nvim", config = "require('twilight_config')" }
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+use({"kylechui/nvim-surround",tag = "*",config = "require('surround_config')"})
   use('github/copilot.vim')
 end)
