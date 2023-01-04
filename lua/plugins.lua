@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind-nvim'
+  use { 'tami5/lspsaga.nvim', config = "require('lspsaga_config')" }
 
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -73,5 +74,6 @@ return require('packer').startup(function(use)
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
   use { "folke/twilight.nvim", config = "require('twilight_config')" }
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use('github/copilot.vim')
 end)

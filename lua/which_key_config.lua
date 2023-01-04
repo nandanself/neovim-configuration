@@ -27,8 +27,9 @@ local mappings = {
   l = {
     name = "LSP",
     i = { ":LspInfo<cr>", "Connected Language Servers" },
+    h ={"<cmd>Lspsaga lsp_finder<CR>", "Lsp finder"},
     k = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-    K = { "<cmd>vim.lsp.buf.hover()<cr>", "Hover Commands" },
+    K = { "<cmd>Lspsaga hover_doc<cr>", "Hover Commands" },
     w = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder" },
     W = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder" },
     l = {
@@ -36,14 +37,21 @@ local mappings = {
       "List Workspace Folders"
     },
     t = { '<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition" },
-    d = { '<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition" },
+     -- d = { '<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition" },
+
+    -- Peek Definition
+    -- you can edit the definition file in this flaotwindow
+    -- also support open/vsplit/etc operation check definition_action_keys
+    -- support tagstack C-t jump back
+    d = { '<cmd>Lspsaga preview_definition<cr>', "Go To Definition" },
+
     D = { '<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration" },
     r = { '<cmd>lua vim.lsp.buf.references()<cr>', "Goto References" },
-    R = { '<cmd>lua vim.lsp.buf.rename()<cr>', "Rename" },
-    a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', "Code Action" },
-    e = { '<cmd>lua vim.lsp.buf.show_line_diagnostics()<cr>', "Show Line Diagnostics" },
-    n = { '<cmd>lua vim.lsp.buf.diagnostic_jump_next()<cr>', "Go To Next Diagnostic" },
-    N = { '<cmd>lua vim.lsp.buf.diagnostic_jump_prev()<cr>', "Go To Previous Diagnostic" }
+    R = { '<cmd>Lspsaga rename<cr>', "Rename" },
+    a = { '<cmd>Lspsaga code_action<cr>', "Code Action" },
+    e = { '<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics" },
+    n = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic" },
+    N = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic" }
   },
 
 }
