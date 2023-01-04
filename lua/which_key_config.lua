@@ -17,17 +17,24 @@ wk.setup {
 }
 
 local mappings = {
-  q = {':q<cr>', 'Quit'},
-  w = {':w<cr>', 'Write'},
-  x = {':x<cr>', 'Xxxx'},
+  q = { ':q<cr>', 'Quit' },
+  w = { ':w<cr>', 'Write' },
+  x = { ':x<cr>', 'Xxxx' },
 
   t = { ':Twilight<cr>', 'Twilight toggle' },
-  E = {':e ~/.config/nvim/lua/plugins.lua<cr>', 'Edit nvim config'},
+  E = { ':e ~/.config/nvim/lua/plugins.lua<cr>', 'Edit nvim config' },
+
+  b = {
+    name = "Buffer",
+
+    p = { "<Cmd>BufferPin<CR>", "Pin/Unpin Buffer" },
+    c = { "<Cmd>BufferCloseAllButVisible<CR>", "Close all Buffer" },
+  },
 
   l = {
     name = "LSP",
     i = { ":LspInfo<cr>", "Connected Language Servers" },
-    h ={"<cmd>Lspsaga lsp_finder<CR>", "Lsp finder"},
+    h = { "<cmd>Lspsaga lsp_finder<CR>", "Lsp finder" },
     k = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     K = { "<cmd>Lspsaga hover_doc<cr>", "Hover Commands" },
     w = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder" },
@@ -37,7 +44,7 @@ local mappings = {
       "List Workspace Folders"
     },
     t = { '<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition" },
-     -- d = { '<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition" },
+    -- d = { '<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition" },
 
     -- Peek Definition
     -- you can edit the definition file in this flaotwindow

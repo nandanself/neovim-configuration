@@ -74,6 +74,6 @@ return require('packer').startup(function(use)
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
   use { "folke/twilight.nvim", config = "require('twilight_config')" }
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
   use('github/copilot.vim')
 end)
