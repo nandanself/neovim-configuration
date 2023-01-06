@@ -7,4 +7,4 @@ lspsaga.init_lsp_saga({
 })
 
 local keymap = vim.keymap.set
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = false })
+-- keymap("n", "gq", "<cmd>Lspsaga peek_definition<CR>", { silent = true })

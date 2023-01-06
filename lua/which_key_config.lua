@@ -26,7 +26,6 @@ local mappings = {
 
 	b = {
 		name = "Buffer",
-
 		p = { "<Cmd>BufferPin<CR>", "Pin/Unpin Buffer" },
 		c = { "<Cmd>BufferCloseAllButVisible<CR>", "Close all Buffer" },
 	},
@@ -34,9 +33,9 @@ local mappings = {
 	l = {
 		name = "LSP",
 		i = { ":LspInfo<cr>", "Connected Language Servers" },
-		h = { "<cmd>Lspsaga lsp_finder<CR>", "Lsp finder" },
 		k = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-		K = { "<cmd>Lspsaga hover_doc<cr>", "Hover Commands" },
+		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
+		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto References" },
 		w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
 		l = {
@@ -50,10 +49,10 @@ local mappings = {
 		-- you can edit the definition file in this flaotwindow
 		-- also support open/vsplit/etc operation check definition_action_keys
 		-- support tagstack C-t jump back
-		-- p = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
-
-		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
-		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Goto References" },
+		c = { "<cmd>Lspsaga close_floaterm<cr>", "Close float term" },
+		o = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
+		h = { "<cmd>Lspsaga lsp_finder<CR>", "Lsp finder" },
+		K = { "<cmd>Lspsaga hover_doc<cr>", "Hover Commands" },
 		R = { "<cmd>Lspsaga rename<cr>", "Rename" },
 		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
 		e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show Line Diagnostics" },

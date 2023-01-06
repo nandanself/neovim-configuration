@@ -28,5 +28,3 @@ keymap.set("n", "<leader>6", ":BufferGoto 6<CR>", silent)
 keymap.set("n", "<leader>7", ":BufferGoto 7<CR>", silent)
 keymap.set("n", "<leader>8", ":BufferGoto 8<CR>", silent)
 keymap.set("n", "<leader>9", ":BufferGoto 9<CR>", silent)
-
-vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
