@@ -78,20 +78,19 @@ return require("packer").startup(function(use)
 	use({ "kylechui/nvim-surround", tag = "*", config = "require('surround_config')" })
 
 	use("jose-elias-alvarez/typescript.nvim")
-	-- use("folke/neodev.nvim")
+	use("folke/neodev.nvim")
 
-	-- use({
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	config = function()
-	-- 		require("chatgpt").setup({
-	-- 			-- optional configuration
-	-- 		})
-	-- 	end,
-	-- 	requires = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- })
-	--
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup({
+				-- optional configuration
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 end)

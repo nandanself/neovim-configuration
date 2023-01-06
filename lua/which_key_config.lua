@@ -50,7 +50,7 @@ local mappings = {
 		-- also support open/vsplit/etc operation check definition_action_keys
 		-- support tagstack C-t jump back
 		c = { "<cmd>Lspsaga close_floaterm<cr>", "Close float term" },
-		o = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
+		p = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
 		h = { "<cmd>Lspsaga lsp_finder<CR>", "Lsp finder" },
 		K = { "<cmd>Lspsaga hover_doc<cr>", "Hover Commands" },
 		R = { "<cmd>Lspsaga rename<cr>", "Rename" },
