@@ -10,8 +10,21 @@ require("nvim-tree").setup({
 		enable = true,
 		update_cwd = true,
 	},
-	filters = {
-		custom = { "^.git$", "^node_modules$" },
+
+	view = {
+		adaptive_size = false,
+		float = {
+			enable = true,
+			quit_on_focus_loss = true,
+			open_win_config = {
+				relative = "editor",
+				border = "rounded",
+				width = 200,
+				-- height = 300,
+				row = 10,
+				col = 10,
+			},
+		},
 	},
 	git = {
 		enable = true,
